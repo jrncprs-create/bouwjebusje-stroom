@@ -1,0 +1,69 @@
+{
+  "intro": {
+    "titel": "Stel je camperstroomsysteem samen",
+    "tekst": "Vier stappen, geen elektrotechniek nodig, geen e-mailadres. Wij rekenen alles voor je uit — en zeggen het ook eerlijk als iets niet slim is."
+  },
+
+  "stappen": [
+    { "id": "apparaten", "titel": "Wat moet er kunnen draaien?", "sub": "Vink aan wat je mee wilt nemen. Twijfel je? Laat het uit — uitbreiden kan altijd." },
+    { "id": "gebruik", "titel": "Hoe gebruik je de bus?", "sub": "Dit bepaalt hoeveel buffer je nodig hebt en waar je stroom vandaan komt." },
+    { "id": "bus", "titel": "Ruimte en budget", "sub": "Hoeveel dak heb je, en in welke prijsklasse wil je winkelen?" },
+    { "id": "resultaat", "titel": "Jouw systeem", "sub": "Een complete, kloppende lijst — met per onderdeel de uitleg waarom." }
+  ],
+
+  "vragen": {
+    "frequentie": {
+      "vraag": "Hoe vaak ben je op pad?",
+      "opties": [
+        { "id": "weekend", "label": "Weekendjes en korte trips", "sub": "Er zit meestal een week thuis (met stopcontact) tussen" },
+        { "id": "vakantie", "label": "Vakanties van 1 tot 4 weken", "sub": "Je wilt wekenlang zelfvoorzienend zijn" },
+        { "id": "fulltime", "label": "(Bijna) fulltime", "sub": "De bus is je huis — het systeem mag nooit de bodem raken" }
+      ]
+    },
+    "seizoen": {
+      "vraag": "Wanneer ga je op pad?",
+      "sub": "In december levert een zonnepaneel maar een vijfde van wat hij in juli doet. Dit is de belangrijkste vraag van deze stap.",
+      "opties": [
+        { "id": "zomer", "label": "Vooral in de zomer", "sub": "Mei tot en met september" },
+        { "id": "voorNajaar", "label": "Ook voor- en najaar", "sub": "Maart tot en met oktober" },
+        { "id": "winter", "label": "Het hele jaar, ook winter", "sub": "Wintersport of fulltime" }
+      ]
+    },
+    "rijden": {
+      "vraag": "Hoeveel rijd je op een gemiddelde tripdag?",
+      "sub": "Rijden = gratis laden via je dynamo, met een B2B-lader.",
+      "opties": [
+        { "id": "veel", "label": "Vrijwel elke dag een stuk", "sub": "Rondtrekken, elke dag of om de dag een nieuwe plek" },
+        { "id": "beetje", "label": "Af en toe", "sub": "Paar dagen staan, dan weer verkassen" },
+        { "id": "weinig", "label": "Ik sta vooral stil", "sub": "Eén plek opzoeken en dagenlang blijven" }
+      ]
+    },
+    "dak": {
+      "vraag": "Hoe groot is je bus?",
+      "sub": "Dit bepaalt hoeveel paneel er op het dak past (naast dakraam en ventilator).",
+      "opties": [
+        { "id": "klein", "label": "Klein busje", "sub": "VW Caddy, Transporter, Vito — ± 1,8 m² vrij dak" },
+        { "id": "middel", "label": "Middelgroot (L2H2)", "sub": "Ducato/Jumper/Boxer kort — ± 3 m² vrij dak" },
+        { "id": "groot", "label": "Grote bus (L3/L4)", "sub": "Lange Ducato, Sprinter, Crafter — ± 4,5 m² vrij dak" }
+      ]
+    },
+    "budget": {
+      "vraag": "In welke prijsklasse wil je winkelen?",
+      "sub": "Eerlijk: ook budgetmerken zijn tegenwoordig prima. Je betaalt bij premium vooral voor de app, de garantie en het gemak.",
+      "opties": [
+        { "id": "premium", "label": "Premium", "sub": "Victron & Dometic — beste app, beste garantie" },
+        { "id": "midden", "label": "Middenweg", "sub": "Renogy & Dometic — degelijk, scherpere prijs" },
+        { "id": "budget", "label": "Budget", "sub": "LiTime, Epever, Alpicool — goede prijs-kwaliteit" }
+      ]
+    }
+  },
+
+  "resultaatTeksten": {
+    "disclosureNodig": true,
+    "verbruikKop": "Jouw stroomverbruik per dag",
+    "verbruikUitleg": "Alles wat je aanvinkte, opgeteld in wattuur (Wh) per dag. Dit getal bepaalt de rest van het systeem.",
+    "lijstKop": "Jouw boodschappenlijst",
+    "uitbreidKop": "Slim beginnen, later uitbreiden",
+    "uitbreidTekst": "Je hoeft niet alles in één keer te kopen. Begin met accu, laadregelaar, panelen en bekabeling — dat is een werkend systeem. Een B2B-lader, omvormer of extra paneel kun je er later zo bij zetten, zeker als je de laadregelaar een maatje ruimer koopt (dat doen wij standaard in dit advies)."
+  }
+}
