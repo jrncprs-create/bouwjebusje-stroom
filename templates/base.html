@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ titel }}</title>
+<meta name="description" content="{{ beschrijving }}">
+<link rel="canonical" href="https://{{ site.domein }}{{ site.basispad }}{{ url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alata&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+{{{ jsonld }}}
+</head>
+<body class="{{ klasse }}">
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="merk" href="https://bouwjebusje.nl/">
+      <img class="merk-logo" src="{{ media.logoDonker }}" alt="Bouwjebusje.nl" width="96" height="63">
+      <span class="merk-sub">camperstroom</span>
+    </a>
+    <nav class="hoofdnav" aria-label="Hoofdmenu">
+      {{{ nav }}}
+    </nav>
+  </div>
+</header>
+
+<main>
+{{{ body }}}
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-kolommen">
+    {{{ footer }}}
+  </div>
+  <div class="wrap footer-onder">
+    <img class="footer-logo" src="{{ media.logoWit }}" alt="Bouwjebusje.nl" width="140" height="92" loading="lazy">
+    <p>{{ site.sub }} is onderdeel van <a href="https://bouwjebusje.nl/">bouwjebusje.nl</a> — workshops camper bouwen in Amsterdam.</p>
+    <p class="footer-klein">© {{ jaar }} {{ site.eigenaar.bedrijf }} · KVK {{ site.eigenaar.kvk }} · <a href="over-deze-site.html">Over deze site &amp; affiliate-links</a></p>
+  </div>
+</footer>
+
+<script src="assets/wizard-data.js" defer></script>
+<script src="assets/site.js" defer></script>
+</body>
+</html>
