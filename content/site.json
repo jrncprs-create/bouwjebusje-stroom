@@ -1,0 +1,52 @@
+{
+  "naam": "Bouwjebusje.nl",
+  "sub": "Camperstroom",
+  "domein": "bouwjebusje.nl",
+  "basispad": "/stroom/",
+  "tagline": "Stel je camperstroomsysteem samen",
+  "beschrijving": "Stel in vier stappen je complete 12V-stroomsysteem voor je camper samen. Van koelkast tot accu, uitgelegd in gewone mensentaal — inclusief eerlijk advies over wat je níét nodig hebt.",
+
+  "bol_site_id": "",
+  "amazon_tag": "",
+
+  "eigenaar": {
+    "bedrijf": "CPRS",
+    "kvk": "55039499",
+    "email": "financien@cprs.nl",
+    "plaats": "Amsterdam"
+  },
+
+  "disclosure_kort": "Op deze pagina staan links naar webshops zoals bol. Koop je iets via zo'n link, dan krijgen wij een kleine vergoeding. Jij betaalt niets extra. Ons advies verandert er niet door — we schrijven ook op wat je níét moet kopen.",
+
+  "nav": [
+    { "titel": "Samensteller", "url": "index.html", "cta": true },
+    { "titel": "Uitleg", "url": "uitleg.html" },
+    { "titel": "Terug naar bouwjebusje.nl", "url": "https://bouwjebusje.nl/" }
+  ],
+
+  "footer": [
+    {
+      "kop": "Camperstroom",
+      "links": [
+        { "titel": "Stel je systeem samen", "url": "index.html" },
+        { "titel": "Alle uitlegartikelen", "url": "uitleg.html" }
+      ]
+    },
+    {
+      "kop": "Uitleg",
+      "links": [
+        { "titel": "Hoeveel zonnepanelen heb ik nodig?", "url": "hoeveel-zonnepanelen-camper.html" },
+        { "titel": "LiFePO4 of AGM-accu?", "url": "lifepo4-vs-agm.html" },
+        { "titel": "Compressor- of absorptiekoelkast?", "url": "compressor-vs-absorptiekoelkast.html" },
+        { "titel": "De B2B-lader uitgelegd", "url": "b2b-lader-uitgelegd.html" }
+      ]
+    },
+    {
+      "kop": "Bouwjebusje",
+      "links": [
+        { "titel": "Workshops camper bouwen", "url": "https://bouwjebusje.nl/" },
+        { "titel": "Over deze site & affiliate", "url": "over-deze-site.html" }
+      ]
+    }
+  ]
+}
