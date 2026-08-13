@@ -1,0 +1,54 @@
+{
+  "_uitleg": "Alle aannames van de rekensom op één plek, zodat je ze kunt bijstellen zonder in de code te duiken. De som: (1) tel de wattuur per dag van alle gekozen apparaten op; (2) omvormerverlies erbij voor 230V-apparaten; (3) accu = dagverbruik × autonomiedagen ÷ bruikbaar deel ÷ 12,8V; (4) panelen = dagverbruik ÷ zonuren van het gekozen seizoen ÷ systeemrendement; (5) begrens aan wat het dak aankan en vul het gat eerlijk in met B2B of een waarschuwing.",
+
+  "zonurenPerSeizoen": {
+    "_uitleg": "Effectieve vollast-zonuren per dag voor plat op het dak gemonteerde panelen, gemiddeld over goede en slechte dagen. Bewust conservatief: een camper staat ook wel eens in de schaduw.",
+    "zomer": 3.8,
+    "voorNajaar": 2.0,
+    "winter": 0.7
+  },
+
+  "systeemRendement": 0.75,
+  "_systeemRendement": "Verlies door vlakke montage, kabels, temperatuur en de laadregelaar. 75% van het paneelvermogen komt echt in de accu.",
+
+  "omvormerVerlies": 0.15,
+  "omvormerStandbyWhDag": 50,
+  "_omvormer": "230V-apparaten kosten 15% extra door de omzetting, plus ±50 Wh per dag doordat de omvormer aan staat.",
+
+  "accu": {
+    "spanning": 12.8,
+    "bruikbaarDeel": 0.9,
+    "_bruikbaarDeel": "Van een LiFePO4-accu kun je veilig 90% gebruiken (van een loodaccu maar 50% — reden nummer één om geen lood meer te kopen).",
+    "autonomieDagen": { "weekend": 1.5, "vakantie": 2, "fulltime": 2.5 },
+    "_autonomieDagen": "Hoeveel dagen je zonder zon of rijden moet kunnen. Weekenders redden zich met minder buffer; fulltimers willen een slechte week kunnen uitzitten.",
+    "maten": [100, 150, 200, 300, 400, 600]
+  },
+
+  "paneel": {
+    "wpPerM2": 200,
+    "_wpPerM2": "Moderne monokristallijne panelen leveren ruwweg 200 Wp per vierkante meter.",
+    "dakM2": { "klein": 1.8, "middel": 3.0, "groot": 4.5 },
+    "_dakM2": "Bruikbaar dakoppervlak ná dakraam, ventilator en schotel. Klein busje (VW Caddy/T6), middel (L2H2, bijv. Fiat Ducato kort), groot (L3H2 en langer).",
+    "maten": [110, 220, 330, 440, 550, 660, 880]
+  },
+
+  "b2b": {
+    "whPerRijuur": 420,
+    "_whPerRijuur": "Een 30A B2B-lader stopt per uur rijden zo'n 420 Wh in de accu (30A × ~14V). Rijd je 2 uur, dan is dat vaak meer dan je panelen die dag opleveren.",
+    "rijuurPerDag": { "veel": 1.5, "beetje": 0.5, "weinig": 0 }
+  },
+
+  "omvormerMaten": [
+    { "watt": 375, "totPiek": 300 },
+    { "watt": 800, "totPiek": 650 },
+    { "watt": 1200, "totPiek": 1000 },
+    { "watt": 2000, "totPiek": 1700 },
+    { "watt": 3000, "totPiek": 2600 }
+  ],
+  "_omvormerMaten": "Gekozen omvormer = kleinste maat waarvan totPiek boven de opgetelde piek van je 230V-apparaten ligt (niet alles staat tegelijk aan: we tellen de grootste piek plus 30% van de rest).",
+
+  "gelijktijdigheid": 0.3,
+
+  "mpptMarge": 1.15,
+  "_mpptMarge": "De laadregelaar kiezen we 15% ruimer dan het paneelvermogen vraagt, zodat er ruimte is om later een paneel bij te leggen."
+}
