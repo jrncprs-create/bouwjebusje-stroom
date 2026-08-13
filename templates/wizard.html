@@ -1,0 +1,28 @@
+<div class="hero hero-foto" style="background-image:url('{{ media.heroFoto }}')">
+  <div class="wrap">
+    <span class="label">Gratis keuzehulp</span>
+    <h1>{{ wizard.intro.titel }}</h1>
+    <p class="lead">{{ wizard.intro.tekst }}</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div id="wizard" class="wizard-app">
+    <noscript>
+      <div class="callout warn"><strong>JavaScript staat uit.</strong>
+      <p>De samensteller heeft JavaScript nodig om te rekenen. Zet het aan, of lees onze <a href="uitleg.html">uitlegartikelen</a>.</p></div>
+    </noscript>
+  </div>
+</div>
+
+{{{ actueelblok }}}
+
+<section class="uitleg-strook">
+  <div class="wrap">
+    <h2>Eerst snappen, dan kopen</h2>
+    <p class="lead">Vier artikelen die je vertellen wát je eigenlijk koopt — zonder jargon.</p>
+    <div class="grid grid-4">
+      {{{ uitlegkaarten }}}
+    </div>
+  </div>
+</section>
