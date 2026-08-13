@@ -1,0 +1,162 @@
+{
+  "_uitleg": "Alle apparaten die in stap 1 aan te vinken zijn. whDag = realistisch verbruik in wattuur per dag bij normaal gebruik. piekWatt = wat het apparaat maximaal trekt (bepaalt de omvormermaat). is230v = heeft een omvormer nodig. eduMoment verschijnt zodra iemand het apparaat aanvinkt: eerlijke uitleg + zuiniger alternatief. productRef verwijst naar producten.json zodat het zuinige alternatief ook echt in de materiaallijst komt.",
+
+  "apparaten": [
+    {
+      "id": "koelkast",
+      "label": "Koelkast of koelbox",
+      "sub": "Eten en drinken koel houden, ook als je stilstaat",
+      "whDag": 280,
+      "piekWatt": 50,
+      "is230v": false,
+      "populair": true,
+      "productRef": "koelkast",
+      "eduMoment": {
+        "kop": "De belangrijkste keuze van je hele systeem",
+        "tekst": "Een gewone koelbox (absorptie of thermo-elektrisch, zo'n box van de camping) slurpt stroom: al snel 800 tot 1.000 wattuur per dag. Een compressorkoelkast doet hetzelfde werk voor zo'n 250 tot 300 wattuur — drie tot vier keer zuiniger. Dat scheelt niet alleen bij de koelkast: je accu en je zonnepanelen kunnen daardoor de helft kleiner. Eén zuinige koelkast maakt je hele systeem honderden euro's goedkoper. Wij rekenen daarom standaard met een compressorkoelkast, en die zetten we ook in je lijst."
+      }
+    },
+    {
+      "id": "telefoons",
+      "label": "Telefoons en tablets",
+      "sub": "Opladen via USB, voor 2 personen",
+      "whDag": 40,
+      "piekWatt": 30,
+      "is230v": false,
+      "populair": true
+    },
+    {
+      "id": "laptop",
+      "label": "Laptop",
+      "sub": "Werken onderweg, 1 laadbeurt per dag",
+      "whDag": 70,
+      "piekWatt": 90,
+      "is230v": false,
+      "populair": true,
+      "eduMoment": {
+        "kop": "Laad je laptop via USB-C, niet via de omvormer",
+        "tekst": "Bijna elke moderne laptop laadt prima via een 12V-USB-C-aansluiting met Power Delivery. Dat is veel zuiniger dan de oplader in een omvormer prikken: je slaat twee omzettingen over. Alleen voor oudere laptops zonder USB-C-laden heb je een omvormer nodig."
+      }
+    },
+    {
+      "id": "verlichting",
+      "label": "Verlichting",
+      "sub": "LED-spotjes en een leeslampje, avond aan",
+      "whDag": 30,
+      "piekWatt": 25,
+      "is230v": false,
+      "populair": true
+    },
+    {
+      "id": "waterpomp",
+      "label": "Waterpomp",
+      "sub": "Kraan en eventueel buitendouche",
+      "whDag": 10,
+      "piekWatt": 60,
+      "is230v": false,
+      "populair": true
+    },
+    {
+      "id": "standkachel",
+      "label": "Standkachel (diesel of gas)",
+      "sub": "Alleen de ventilator en pomp gebruiken stroom",
+      "whDag": 110,
+      "whDagZomer": 0,
+      "piekWatt": 40,
+      "is230v": false,
+      "eduMoment": {
+        "kop": "Verwarmen op stroom? Nooit doen.",
+        "tekst": "Een diesel- of gaskachel gebruikt alleen stroom voor de ventilator en de brandstofpomp — heel behapbaar. Maar let op: een elektrisch kacheltje van 1.000 watt zou je accu in één avond leegtrekken. Verwarmen doe je op brandstof, nooit op je accu. De kachel zelf telt vooral mee als je in koude maanden op pad gaat; wij rekenen hem alleen mee buiten de zomer."
+      }
+    },
+    {
+      "id": "dakventilator",
+      "label": "Dakventilator (Maxxfan)",
+      "sub": "Frisse lucht, vocht en warmte afvoeren",
+      "whDag": 60,
+      "piekWatt": 30,
+      "is230v": false,
+      "populair": true
+    },
+    {
+      "id": "camera",
+      "label": "Camera- of drone-accu's",
+      "sub": "Opladen van losse accu's",
+      "whDag": 50,
+      "piekWatt": 60,
+      "is230v": false
+    },
+    {
+      "id": "koffie",
+      "label": "Koffiezetapparaat (230V)",
+      "sub": "Filterapparaat of padmachine",
+      "whDag": 100,
+      "piekWatt": 900,
+      "is230v": true,
+      "eduMoment": {
+        "kop": "Overweeg koffie zonder stopcontact",
+        "tekst": "Kán prima met een omvormer, maar een percolator of AeroPress op je gaspit maakt net zulke lekkere koffie zonder één wattuur te gebruiken. Kies je toch voor elektrisch, dan bepaalt dit apparaat mede hoe zwaar je omvormer moet zijn. Vermijd in elk geval espressomachines van 1.400 watt en meer."
+      }
+    },
+    {
+      "id": "inductie",
+      "label": "Koken op inductie",
+      "sub": "Elektrisch koken in plaats van gas",
+      "whDag": 1100,
+      "piekWatt": 2000,
+      "is230v": true,
+      "eduMoment": {
+        "kop": "Eerlijk: dit maakt je systeem twee keer zo groot",
+        "tekst": "Inductie koken kost al snel 1.000 wattuur per dag en vraagt een zware omvormer van 2.000 tot 3.000 watt met dikke kabels. Reken op minimaal €800 tot €1.000 extra aan accu, omvormer en bekabeling. Koken op gas is in een camper simpelweg praktischer en goedkoper. Kies inductie alleen als je bewust gasvrij wilt bouwen — dan rekenen wij er netjes mee, maar je bent gewaarschuwd."
+      }
+    },
+    {
+      "id": "magnetron",
+      "label": "Magnetron",
+      "sub": "Af en toe iets opwarmen",
+      "whDag": 200,
+      "piekWatt": 1300,
+      "is230v": true,
+      "eduMoment": {
+        "kop": "Klein verbruik, grote omvormer",
+        "tekst": "Een magnetron gebruikt per dag weinig stroom (tien minuten draaien is zo'n 200 wattuur), maar hij trekt wel even 1.300 watt. Alleen daarvoor heb je al een zware omvormer nodig. Vraag jezelf af of een pannetje op het gasstel niet hetzelfde doet."
+      }
+    },
+    {
+      "id": "airco",
+      "label": "Airco",
+      "sub": "Koelen tijdens warme nachten",
+      "whDag": 2000,
+      "piekWatt": 700,
+      "is230v": false,
+      "eduMoment": {
+        "kop": "De grootste stroomvreter die er bestaat",
+        "tekst": "Een nacht airco draaien kost 1.500 tot 2.500 wattuur — meer dan al je andere apparaten bij elkaar. Daar is nauwelijks tegenop te laden met zonnepanelen. Eerlijk advies: een goede dakventilator, horren en slim parkeren (schaduw, neus op de wind) doen 80% van het werk voor 5% van de stroom. Kies airco alleen als je vaak op campings met stroomaansluiting staat, of als je er een fors systeem voor over hebt."
+      }
+    },
+    {
+      "id": "ebike",
+      "label": "E-bike accu's opladen",
+      "sub": "Twee fietsaccu's, om de dag laden",
+      "whDag": 350,
+      "piekWatt": 200,
+      "is230v": true,
+      "eduMoment": {
+        "kop": "Stevige post, maar goed te doen",
+        "tekst": "Een fietsaccu van 500 wattuur die om de dag leeg is, kost gemiddeld zo'n 300 tot 400 wattuur per dag (opladen kost altijd iets meer dan er in de accu past). Dat is behapbaar, maar het telt stevig mee in de accugrootte. Tip: laad de fietsaccu's zoveel mogelijk tijdens het rijden — dan komt de stroom van je dynamo in plaats van je accu."
+      }
+    },
+    {
+      "id": "overig230v",
+      "label": "Overige 230V-apparaten",
+      "sub": "Föhn, tondeuse, blender, oplader zonder USB",
+      "whDag": 100,
+      "piekWatt": 800,
+      "is230v": true,
+      "eduMoment": {
+        "kop": "Heb je die omvormer écht nodig?",
+        "tekst": "Kijk eerst of er een 12V- of USB-versie van je apparaat bestaat — die is er vaker dan je denkt. Elke omzetting naar 230V verspilt zo'n 10 tot 15% stroom, en een omvormer die standby staat lekt óók de hele dag. Als dit je enige 230V-wens is, kun je hem misschien gewoon schrappen."
+      }
+    }
+  ]
+}
