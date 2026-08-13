@@ -1,0 +1,119 @@
+{
+  "_uitleg": "Alle producten die de samensteller kan adviseren. Per component drie budgetklassen. 'maat' is de capaciteit waarop de wizard selecteert (Wp, Ah, A of W). 'zoek' is de zoekterm voor de bol-link (en later Amazon). Prijsklassen in plaats van harde prijzen, conform de bol-voorwaarden. Aanpassen = alleen dit bestand wijzigen.",
+
+  "budgetklassen": {
+    "premium": { "label": "Premium", "sub": "Victron & Dometic — het beste, met de beste app en garantie" },
+    "midden": { "label": "Middenweg", "sub": "Renogy, Dometic — degelijk merk, scherpere prijs" },
+    "budget": { "label": "Budget", "sub": "LiTime, Epever, Alpicool — goede prijs-kwaliteit, geen snobisme" }
+  },
+
+  "componenten": {
+
+    "paneel": {
+      "titel": "Zonnepanelen",
+      "waarom": "Je gratis stroombron zodra je stilstaat. Wij rekenen uit hoeveel wattpiek (Wp) je nodig hebt voor jouw verbruik en seizoen.",
+      "opties": [
+        { "budget": "premium", "paneelWp": 115, "naam": "Victron BlueSolar 115 Wp monokristallijn", "zoek": "Victron zonnepaneel 115W monokristallijn", "prijsklasse": "€100–140 per paneel" },
+        { "budget": "midden", "paneelWp": 100, "naam": "Renogy 100 Wp monokristallijn", "zoek": "Renogy zonnepaneel 100W", "prijsklasse": "€80–110 per paneel" },
+        { "budget": "budget", "paneelWp": 110, "naam": "Offgridtec 110 Wp monokristallijn", "zoek": "Offgridtec zonnepaneel 110W", "prijsklasse": "€70–100 per paneel" }
+      ]
+    },
+
+    "montage": {
+      "titel": "Montageset panelen",
+      "waarom": "ABS-spoilerhoeken lijmen op het dak: geen gaten boren, geen lekkage, en het rijdt stiller dan een frame.",
+      "opties": [
+        { "budget": "alle", "naam": "ABS spoiler-montageset + Sikaflex 252", "zoek": "zonnepaneel spoiler montageset camper", "prijsklasse": "€30–60 per paneel" }
+      ]
+    },
+
+    "mppt": {
+      "titel": "Laadregelaar (MPPT)",
+      "waarom": "Zet de stroom van je panelen om naar de juiste laadspanning. Een MPPT-regelaar haalt tot 30% meer uit je panelen dan een goedkope PWM — daarom adviseren wij nooit PWM.",
+      "opties": [
+        { "budget": "premium", "maxWp": 220, "naam": "Victron SmartSolar 75/15", "zoek": "Victron SmartSolar MPPT 75/15", "prijsklasse": "€90–120" },
+        { "budget": "premium", "maxWp": 440, "naam": "Victron SmartSolar 100/30", "zoek": "Victron SmartSolar MPPT 100/30", "prijsklasse": "€160–200" },
+        { "budget": "premium", "maxWp": 700, "naam": "Victron SmartSolar 100/50", "zoek": "Victron SmartSolar MPPT 100/50", "prijsklasse": "€220–280" },
+        { "budget": "premium", "maxWp": 1160, "naam": "Victron SmartSolar 150/70", "zoek": "Victron SmartSolar MPPT 150/70", "prijsklasse": "€400–500" },
+        { "budget": "midden", "maxWp": 260, "naam": "Renogy Rover 20A MPPT", "zoek": "Renogy Rover 20A MPPT laadregelaar", "prijsklasse": "€80–110" },
+        { "budget": "midden", "maxWp": 520, "naam": "Renogy Rover 40A MPPT", "zoek": "Renogy Rover 40A MPPT laadregelaar", "prijsklasse": "€130–180" },
+        { "budget": "midden", "maxWp": 780, "naam": "Renogy Rover 60A MPPT", "zoek": "Renogy Rover 60A MPPT laadregelaar", "prijsklasse": "€220–280" },
+        { "budget": "budget", "maxWp": 260, "naam": "Epever Tracer 2210AN", "zoek": "Epever Tracer 2210AN MPPT", "prijsklasse": "€50–80" },
+        { "budget": "budget", "maxWp": 520, "naam": "Epever Tracer 4210AN", "zoek": "Epever Tracer 4210AN MPPT", "prijsklasse": "€90–130" },
+        { "budget": "budget", "maxWp": 780, "naam": "Epever Tracer 6415AN", "zoek": "Epever Tracer 6415AN MPPT", "prijsklasse": "€150–200" }
+      ]
+    },
+
+    "accu": {
+      "titel": "Accu (LiFePO4)",
+      "waarom": "Je stroomvoorraad voor avond, nacht en bewolkte dagen. Wij adviseren alleen nog LiFePO4: je kunt er 90% van gebruiken (lood: 50%), hij gaat 10× langer mee en weegt de helft. Lood is anno nu duurkoop.",
+      "opties": [
+        { "budget": "premium", "ah": 100, "naam": "Victron LiFePO4 Smart 100Ah", "zoek": "Victron LiFePO4 100Ah accu", "prijsklasse": "€700–900" },
+        { "budget": "premium", "ah": 200, "naam": "Victron LiFePO4 Smart 200Ah", "zoek": "Victron LiFePO4 200Ah accu", "prijsklasse": "€1.300–1.700" },
+        { "budget": "premium", "ah": 300, "naam": "Victron LiFePO4 Smart 330Ah", "zoek": "Victron LiFePO4 330Ah accu", "prijsklasse": "€2.000–2.600" },
+        { "budget": "midden", "ah": 100, "naam": "Renogy LiFePO4 100Ah", "zoek": "Renogy LiFePO4 100Ah accu", "prijsklasse": "€300–450" },
+        { "budget": "midden", "ah": 200, "naam": "Renogy LiFePO4 200Ah", "zoek": "Renogy LiFePO4 200Ah accu", "prijsklasse": "€600–850" },
+        { "budget": "midden", "ah": 300, "naam": "Renogy LiFePO4 300Ah", "zoek": "Renogy LiFePO4 300Ah accu", "prijsklasse": "€900–1.300" },
+        { "budget": "budget", "ah": 100, "naam": "LiTime LiFePO4 100Ah", "zoek": "LiTime LiFePO4 100Ah accu", "prijsklasse": "€250–350" },
+        { "budget": "budget", "ah": 200, "naam": "LiTime LiFePO4 200Ah", "zoek": "LiTime LiFePO4 200Ah accu", "prijsklasse": "€500–700" },
+        { "budget": "budget", "ah": 300, "naam": "LiTime LiFePO4 300Ah", "zoek": "LiTime LiFePO4 300Ah accu", "prijsklasse": "€750–1.100" }
+      ]
+    },
+
+    "b2b": {
+      "titel": "B2B-lader (laden tijdens het rijden)",
+      "waarom": "Laadt je accu vanuit de dynamo terwijl je rijdt — je betrouwbaarste stroombron in de winter en op bewolkte dagen. Een uur rijden levert meer dan een heel winterdagje zon.",
+      "opties": [
+        { "budget": "premium", "a": 50, "naam": "Victron Orion XS 12/12-50A", "zoek": "Victron Orion XS 50A B2B lader", "prijsklasse": "€250–320" },
+        { "budget": "midden", "a": 40, "naam": "Renogy 40A DC-DC lader", "zoek": "Renogy 40A DC-DC acculader", "prijsklasse": "€150–200" },
+        { "budget": "budget", "a": 20, "naam": "Renogy 20A DC-DC lader", "zoek": "Renogy 20A DC-DC acculader", "prijsklasse": "€90–130" }
+      ]
+    },
+
+    "omvormer": {
+      "titel": "Omvormer (230V)",
+      "waarom": "Maakt van 12V gewone netstroom voor stekkerapparaten. Altijd een zuivere sinus kiezen — een 'gemodificeerde sinus' sloopt gevoelige apparatuur.",
+      "opties": [
+        { "budget": "premium", "watt": 375, "naam": "Victron Phoenix 12/375", "zoek": "Victron Phoenix omvormer 12V 375W", "prijsklasse": "€110–150" },
+        { "budget": "premium", "watt": 800, "naam": "Victron Phoenix 12/800", "zoek": "Victron Phoenix omvormer 12V 800W", "prijsklasse": "€200–260" },
+        { "budget": "premium", "watt": 1200, "naam": "Victron Phoenix 12/1200", "zoek": "Victron Phoenix omvormer 12V 1200W", "prijsklasse": "€300–400" },
+        { "budget": "premium", "watt": 2000, "naam": "Victron Phoenix 12/2000", "zoek": "Victron Phoenix omvormer 12V 2000W", "prijsklasse": "€550–700" },
+        { "budget": "premium", "watt": 3000, "naam": "Victron MultiPlus 12/3000", "zoek": "Victron MultiPlus 12/3000", "prijsklasse": "€1.100–1.400" },
+        { "budget": "midden", "watt": 1000, "naam": "Renogy 1000W zuivere sinus", "zoek": "Renogy 1000W zuivere sinus omvormer", "prijsklasse": "€150–220" },
+        { "budget": "midden", "watt": 2000, "naam": "Renogy 2000W zuivere sinus", "zoek": "Renogy 2000W zuivere sinus omvormer", "prijsklasse": "€250–350" },
+        { "budget": "midden", "watt": 3000, "naam": "Renogy 3000W zuivere sinus", "zoek": "Renogy 3000W zuivere sinus omvormer", "prijsklasse": "€400–550" },
+        { "budget": "budget", "watt": 500, "naam": "Green Cell 500W zuivere sinus", "zoek": "Green Cell 500W zuivere sinus omvormer 12V", "prijsklasse": "€70–110" },
+        { "budget": "budget", "watt": 1000, "naam": "Green Cell 1000W zuivere sinus", "zoek": "Green Cell 1000W zuivere sinus omvormer 12V", "prijsklasse": "€110–160" },
+        { "budget": "budget", "watt": 2000, "naam": "Green Cell 2000W zuivere sinus", "zoek": "Green Cell 2000W zuivere sinus omvormer 12V", "prijsklasse": "€180–260" }
+      ]
+    },
+
+    "koelkast": {
+      "titel": "Compressorkoelkast",
+      "waarom": "Drie tot vier keer zuiniger dan een absorptie- of thermo-elektrische koelbox, en hij koelt óók als het buiten 35 graden is. De zuinigste grote klapper in je systeem.",
+      "opties": [
+        { "budget": "premium", "naam": "Dometic CFX3 45 koelbox", "zoek": "Dometic CFX3 45 compressor koelbox", "prijsklasse": "€800–1.000" },
+        { "budget": "midden", "naam": "Dometic CDF2 36 koelbox", "zoek": "Dometic CDF2 36 compressor koelbox", "prijsklasse": "€400–550" },
+        { "budget": "budget", "naam": "Alpicool C40 koelbox", "zoek": "Alpicool C40 compressor koelbox", "prijsklasse": "€200–300" }
+      ]
+    },
+
+    "monitor": {
+      "titel": "Accumonitor",
+      "waarom": "Een shunt meet precies wat erin en eruit gaat — zo zie je op je telefoon hoe vol je accu écht is. Zonder monitor is elk stroomsysteem gokken.",
+      "opties": [
+        { "budget": "premium", "naam": "Victron SmartShunt 500A", "zoek": "Victron SmartShunt 500A", "prijsklasse": "€110–140" },
+        { "budget": "midden", "naam": "Renogy 500A shunt met monitor", "zoek": "Renogy 500A battery monitor shunt", "prijsklasse": "€70–100" },
+        { "budget": "budget", "naam": "AiLi/Juntek shunt met display", "zoek": "accu monitor shunt 350A display", "prijsklasse": "€30–50" }
+      ]
+    },
+
+    "kabels": {
+      "titel": "Bekabeling, zekeringen en verdeling",
+      "waarom": "Het saaiste onderdeel en het belangrijkste: elke plus-kabel krijgt een zekering, en kabeldikte moet bij de stroomsterkte passen. Hier bezuinig je nooit op — dit is je brandverzekering.",
+      "opties": [
+        { "budget": "alle", "naam": "Kabelset, zekeringhouders + verdeelblok", "zoek": "camper 12V kabelset zekeringen verdeelblok", "prijsklasse": "€80–200, afhankelijk van systeemgrootte" }
+      ]
+    }
+  }
+}
