@@ -279,12 +279,17 @@ for (const bestand of paginas) {
   let inhoud = markdown(body);
   const isActueel = meta.soort === 'Actueel';
 
-  // Actueel = nieuwsbrief-stijl: kop eerst, daarna een bescheiden relevante
-  // foto in de tekst — geen paginabrede hero. Uitleg houdt de grote kopfoto.
+  // Actueel = nieuwsbrief-stijl: kop en tekst eerst, foto klein rechts ernaast.
+  // Uitleg houdt de brede kopfoto boven het artikel.
   let kopfoto = '';
   if (meta.kopfoto) {
     if (isActueel) {
-      inhoud = `<figure class="artfoto"><img src="${esc(meta.kopfoto)}" alt="${esc(meta.kopfoto_alt || meta.titel)}" loading="lazy"></figure>\n` + inhoud;
+      // de foto komt ná de eerste kop te staan en zweeft rechts naast de tekst,
+      // zodat de kop over de volle breedte blijft en niets wordt platgedrukt
+      const fig = `<figure class="nieuwsfoto"><img src="${esc(meta.kopfoto)}" alt="${esc(meta.kopfoto_alt || meta.titel)}" loading="lazy"></figure>`;
+      inhoud = inhoud.includes('</h2>')
+        ? inhoud.replace('</h2>', '</h2>\n' + fig)
+        : fig + '\n' + inhoud;
     } else {
       kopfoto = `<div class="kopfoto"><img src="${esc(meta.kopfoto)}" alt="${esc(meta.kopfoto_alt || meta.titel)}"></div>`;
     }
@@ -296,6 +301,7 @@ for (const bestand of paginas) {
     jsonld: ldScript([jsonldArtikel(meta, url), jsonldFaq(body), jsonldBreadcrumb(meta.titel, url)]),
     body: render(T.artikel, {
       titel: meta.titel, intro: meta.intro || '', inhoud, kopfoto,
+      kopklasse: isActueel ? 'nieuws-kop' : '',
       disclosureblok: meta.affiliate ? '<p class="disclosure">' + esc(site.disclosure_kort) + '</p>' : '',
       bijgewerkt: meta.datum ? 'Laatst bijgewerkt: ' + meta.datum : '',
       soort: isActueel && meta.datum ? 'Actueel · ' + meta.datum : (meta.soort || 'Uitleg')
@@ -303,12 +309,13 @@ for (const bestand of paginas) {
   });
   schrijf(url, html);
 
-  if (isActueel) actueel.push({ titel: meta.titel, url, intro: meta.intro, datum: meta.datum });
+  if (isActueel) actueel.push({ titel: meta.titel, url, intro: meta.intro, datum: meta.datum, iso: meta.iso || '' });
   else if (meta.soort !== 'colofon') uitleg.push({ titel: meta.titel, url, intro: meta.intro });
 }
 
-// nieuwste actueel-stuk eerst (bestandsnaam begint met actueel-JJJJ-MM)
-actueel.sort((a, b) => b.url.localeCompare(a.url));
+// nieuwste actueel-stuk eerst — op iso-datum, want met meerdere stukken per
+// maand zegt de bestandsnaam niets meer over de volgorde
+actueel.sort((a, b) => b.iso.localeCompare(a.iso) || b.url.localeCompare(a.url));
 
 const kaart = (u) => `<a class="card" href="${u.url}"><h3>${esc(u.titel)}</h3><p>${esc(u.intro)}</p></a>`;
 const kaartActueel = (u) => `<a class="card" href="${u.url}"><span class="label">${esc(u.datum || 'Actueel')}</span><h3>${esc(u.titel)}</h3><p>${esc(u.intro)}</p></a>`;
@@ -352,11 +359,13 @@ schrijf('actueel.html', pagina({
   beschrijving: 'Wekelijks een eigen stuk over wat er speelt in camperstroomland: accu\'s, zonnepanelen en regelgeving — eerlijk en zonder jargon.',
   url: 'actueel.html',
   jsonld: ldScript([jsonldBreadcrumb('Actueel', 'actueel.html')]),
-  body: `<div class="artikel-kop"><div class="wrap narrow">
-    <span class="label">Actueel</span>
-    <h1>Camperstroomnieuws</h1>
-    <p class="lead">Elke week zoeken we uit wat er speelt — nieuwe accutechniek, prijsdalingen, regelgeving — en schrijven we er een eigen stuk over. Eerlijk zoals altijd: ook als de conclusie "niets doen" is.</p>
-  </div></div>
+  body: `<div class="hero hero-foto" style="background-image:url('${esc(media.heroFoto)}')">
+    <div class="wrap">
+      <span class="label">Actueel</span>
+      <h1>Camperstroomnieuws</h1>
+      <p class="lead">Elke week zoeken we uit wat er speelt — nieuwe accutechniek, prijzen, regelgeving — en schrijven we er een eigen stuk over. Eerlijk zoals altijd: ook als de conclusie "niets doen" is.</p>
+    </div>
+  </div>
   <div class="wrap narrow nieuwslijst">
   ${actueel.map((u) => `<a class="nieuwsitem" href="${u.url}">
     <span class="label">${esc(u.datum || 'Actueel')}</span>
