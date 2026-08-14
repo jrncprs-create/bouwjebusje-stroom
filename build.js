@@ -220,11 +220,13 @@ function footerHtml() {
   ).join('\n');
 }
 
+const BUST = Date.now().toString(36); // cache-buster voor assets, per build uniek
+
 function pagina({ titel, beschrijving, url, body, klasse = '', jsonld = '' }) {
   return render(T.base, {
     site, media, titel, beschrijving, url,
     nav: navHtml(url), footer: footerHtml(), body, klasse, jsonld,
-    jaar: new Date().getFullYear()
+    jaar: new Date().getFullYear(), bust: BUST
   });
 }
 
