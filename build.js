@@ -276,25 +276,34 @@ const actueel = [];
 for (const bestand of paginas) {
   const { meta, body } = leesPagina(bestand);
   const url = bestand.replace('.md', '.html');
-  const inhoud = markdown(body);
+  let inhoud = markdown(body);
+  const isActueel = meta.soort === 'Actueel';
+
+  // Actueel = nieuwsbrief-stijl: kop eerst, daarna een bescheiden relevante
+  // foto in de tekst — geen paginabrede hero. Uitleg houdt de grote kopfoto.
+  let kopfoto = '';
+  if (meta.kopfoto) {
+    if (isActueel) {
+      inhoud = `<figure class="artfoto"><img src="${esc(meta.kopfoto)}" alt="${esc(meta.kopfoto_alt || meta.titel)}" loading="lazy"></figure>\n` + inhoud;
+    } else {
+      kopfoto = `<div class="kopfoto"><img src="${esc(meta.kopfoto)}" alt="${esc(meta.kopfoto_alt || meta.titel)}"></div>`;
+    }
+  }
 
   const html = pagina({
     titel: meta.titel + ' | ' + site.naam,
     beschrijving: meta.beschrijving, url,
     jsonld: ldScript([jsonldArtikel(meta, url), jsonldFaq(body), jsonldBreadcrumb(meta.titel, url)]),
     body: render(T.artikel, {
-      titel: meta.titel, intro: meta.intro || '', inhoud,
-      kopfoto: meta.kopfoto
-        ? `<div class="kopfoto"><img src="${esc(meta.kopfoto)}" alt="${esc(meta.kopfoto_alt || meta.titel)}"></div>`
-        : '',
+      titel: meta.titel, intro: meta.intro || '', inhoud, kopfoto,
       disclosureblok: meta.affiliate ? '<p class="disclosure">' + esc(site.disclosure_kort) + '</p>' : '',
       bijgewerkt: meta.datum ? 'Laatst bijgewerkt: ' + meta.datum : '',
-      soort: meta.soort || 'Uitleg'
+      soort: isActueel && meta.datum ? 'Actueel · ' + meta.datum : (meta.soort || 'Uitleg')
     })
   });
   schrijf(url, html);
 
-  if (meta.soort === 'Actueel') actueel.push({ titel: meta.titel, url, intro: meta.intro, datum: meta.datum });
+  if (isActueel) actueel.push({ titel: meta.titel, url, intro: meta.intro, datum: meta.datum });
   else if (meta.soort !== 'colofon') uitleg.push({ titel: meta.titel, url, intro: meta.intro });
 }
 
@@ -309,6 +318,7 @@ const actueelblok = actueel.length ? `<section class="actueel-strook">
     <h2>Actueel</h2>
     <p class="lead">Wat er speelt in camperstroomland — elke week een eigen stuk, eerlijk zoals altijd.</p>
     <div class="grid grid-3">${actueel.slice(0, 3).map(kaartActueel).join('')}</div>
+    <p class="alle-link"><a href="actueel.html">Alle actueel-stukken →</a></p>
   </div>
 </section>` : '';
 
@@ -336,8 +346,29 @@ schrijf('uitleg.html', pagina({
   ${actueel.length ? `<h2 style="margin-top:1.8em">Actueel</h2><div class="grid grid-3">${actueel.map(kaartActueel).join('')}</div>` : ''}</div>`
 }));
 
+// actueel-overzicht: nieuwsbrief-archief, nieuwste bovenaan
+schrijf('actueel.html', pagina({
+  titel: 'Actueel — camperstroomnieuws | ' + site.naam,
+  beschrijving: 'Wekelijks een eigen stuk over wat er speelt in camperstroomland: accu\'s, zonnepanelen en regelgeving — eerlijk en zonder jargon.',
+  url: 'actueel.html',
+  jsonld: ldScript([jsonldBreadcrumb('Actueel', 'actueel.html')]),
+  body: `<div class="artikel-kop"><div class="wrap narrow">
+    <span class="label">Actueel</span>
+    <h1>Camperstroomnieuws</h1>
+    <p class="lead">Elke week zoeken we uit wat er speelt — nieuwe accutechniek, prijsdalingen, regelgeving — en schrijven we er een eigen stuk over. Eerlijk zoals altijd: ook als de conclusie "niets doen" is.</p>
+  </div></div>
+  <div class="wrap narrow nieuwslijst">
+  ${actueel.map((u) => `<a class="nieuwsitem" href="${u.url}">
+    <span class="label">${esc(u.datum || 'Actueel')}</span>
+    <h2>${esc(u.titel)}</h2>
+    <p>${esc(u.intro)}</p>
+    <span class="leesmeer">Lees het hele stuk →</span>
+  </a>`).join('')}
+  </div>`
+}));
+
 // sitemap + robots (robots.txt hoort bij de hoofdsite; wij leveren alleen een sitemap)
-const urls = ['', 'uitleg.html'].concat(paginas.map((f) => f.replace('.md', '.html')));
+const urls = ['', 'uitleg.html', 'actueel.html'].concat(paginas.map((f) => f.replace('.md', '.html')));
 schrijf('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
   urls.map((u) => `  <url><loc>${BASIS}${u}</loc></url>`).join('\n') + '\n</urlset>\n');
 
