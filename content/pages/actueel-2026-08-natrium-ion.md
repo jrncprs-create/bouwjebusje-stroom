@@ -6,8 +6,8 @@ soort: Actueel
 affiliate: ja
 datum: 13 augustus 2026
 iso: 2026-08-13
-kopfoto: https://bouwjebusje.nl/wp-content/uploads/2022/02/73b3ebcb5461f0822d510d52771b1bb8.jpg
-kopfoto_alt: Uitzicht vanuit een camperbed op de bergen - hiervoor doe je het
+kopfoto: assets/media/hero-stroom.jpg
+kopfoto_alt: Accubak van een camper met LiFePO4-accu's en bekabeling
 ---
 
 ## Wat is er aan de hand?
