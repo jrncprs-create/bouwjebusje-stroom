@@ -87,13 +87,13 @@ p { margin: .7em 0; }
 .hero-foto {
   position: relative;
   background-size: cover;
-  background-position: center 60%;
-  padding: 88px 0 76px;
+  background-position: center 40%;
+  padding: 72px 0 64px;
 }
 .hero-foto::before {
   content: "";
   position: absolute; inset: 0;
-  background: linear-gradient(100deg, rgba(28, 35, 16, .88) 0%, rgba(28, 35, 16, .62) 55%, rgba(28, 35, 16, .30) 100%);
+  background: linear-gradient(100deg, rgba(20, 24, 12, .92) 0%, rgba(20, 24, 12, .72) 52%, rgba(20, 24, 12, .38) 100%);
 }
 .hero-foto .wrap { position: relative; }
 .hero-foto h1 { color: var(--wit); }
@@ -101,7 +101,7 @@ p { margin: .7em 0; }
 .hero-foto .lead { color: #e8e6df; }
 
 /* echte foto's in artikelen */
-.kopfoto { max-height: 380px; overflow: hidden; }
+.kopfoto { max-height: 380px; overflow: hidden; background: var(--groen); }
 .kopfoto img { width: 100%; height: 380px; object-fit: cover; display: block; }
 .artfoto { margin: 22px 0; }
 .artfoto img { width: 100%; height: auto; display: block; border-radius: var(--radius); border: 1px solid var(--lijn); }
@@ -132,7 +132,7 @@ p { margin: .7em 0; }
 
 /* ---------------------------------------------------------------- wizard */
 
-.wizard-app { margin: 40px 0 64px; }
+.wizard-app { margin: 48px 0 72px; }
 
 .stappenbalk { display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; }
 .stap-dot {
@@ -274,14 +274,32 @@ tbody tr:nth-child(even) { background: var(--offwhite); }
 
 /* ----------------------------------------------------------- actueel */
 
-.actueel-strook { padding: 48px 0 8px; }
+.actueel-strook { padding: 56px 0 48px; }
 .actueel-strook h2 { margin-top: 0; }
+.alle-link { margin-top: 18px; }
+.alle-link a { font-size: .85rem; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; border-bottom: 2px solid var(--zand); padding-bottom: 2px; }
+.alle-link a:hover { border-bottom-color: var(--zwart); }
+
+/* nieuwsbrief-archief op actueel.html */
+.nieuwslijst { padding: 28px 20px 20px; }
+.nieuwsitem {
+  display: block; text-decoration: none;
+  border: 1px solid var(--lijn); border-radius: var(--radius);
+  background: var(--wit); padding: 24px 26px 20px; margin: 0 0 18px;
+  transition: box-shadow .12s;
+}
+.nieuwsitem:hover { box-shadow: 4px 4px 0 var(--zand); }
+.nieuwsitem .label { color: var(--zand-donker); margin-bottom: 4px; display: block; }
+.nieuwsitem h2 { margin: 0 0 8px; font-size: 1.4rem; }
+.nieuwsitem p { margin: 0 0 10px; color: var(--tekst-zacht); }
+.nieuwsitem .leesmeer { font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; border-bottom: 2px solid var(--zand); padding-bottom: 2px; }
 .grid-3 { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
 .card .label { margin-bottom: 6px; display: block; color: var(--zand-donker); }
 
 /* ----------------------------------------------------------- uitlegstrook */
 
-.uitleg-strook { background: var(--offwhite); padding: 48px 0 56px; }
+.uitleg-strook { background: var(--offwhite); padding: 56px 0 64px; }
+.uitleg-strook h2 { margin-top: 0; }
 .grid { display: grid; gap: 16px; }
 .grid-4 { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
 .card {
