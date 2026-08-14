@@ -21,6 +21,7 @@
   "nav": [
     { "titel": "Samensteller", "url": "index.html", "cta": true },
     { "titel": "Uitleg", "url": "uitleg.html" },
+    { "titel": "Actueel", "url": "actueel.html" },
     { "titel": "Terug naar bouwjebusje.nl", "url": "https://bouwjebusje.nl/" }
   ],
 
@@ -29,7 +30,8 @@
       "kop": "Camperstroom",
       "links": [
         { "titel": "Stel je systeem samen", "url": "index.html" },
-        { "titel": "Alle uitlegartikelen", "url": "uitleg.html" }
+        { "titel": "Alle uitlegartikelen", "url": "uitleg.html" },
+        { "titel": "Actueel", "url": "actueel.html" }
       ]
     },
     {
