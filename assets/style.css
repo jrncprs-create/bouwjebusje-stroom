@@ -166,7 +166,7 @@ p { margin: .7em 0; }
 }
 .keuze:hover { box-shadow: 3px 3px 0 var(--zand); }
 .keuze input { position: absolute; opacity: 0; }
-.keuze .keuze-label { display: block; font-weight: 700; }
+.keuze .keuze-label { display: block; font-weight: 700; padding-right: 34px; }
 .keuze .keuze-sub { display: block; font-size: .85rem; color: var(--tekst-zacht); margin-top: 2px; }
 .keuze .vink {
   position: absolute; top: 12px; right: 12px;
