@@ -101,8 +101,8 @@ p { margin: .7em 0; }
 .hero-foto .lead { color: #e8e6df; }
 
 /* echte foto's in artikelen */
-.kopfoto { max-height: 380px; overflow: hidden; background: var(--groen); }
-.kopfoto img { width: 100%; height: 380px; object-fit: cover; display: block; }
+.kopfoto { max-height: 300px; overflow: hidden; background: var(--groen); }
+.kopfoto img { width: 100%; height: 300px; object-fit: cover; display: block; }
 .artfoto { margin: 22px 0; }
 .artfoto img { width: 100%; height: auto; display: block; border-radius: var(--radius); border: 1px solid var(--lijn); }
 .artfoto.portret img { max-width: 380px; }
@@ -235,7 +235,28 @@ p { margin: .7em 0; }
 
 .artikel-kop { background: var(--offwhite); padding: 48px 0 34px; }
 .article { padding: 10px 20px 40px; }
-.article h2 { border-bottom: 2px solid var(--zand); display: inline-block; padding-bottom: 4px; }
+/* display:table i.p.v. inline-block: krimpt net zo netjes om de tekst, maar
+   luistert wél naar clear (nodig naast een zwevende nieuwsfoto) */
+.article h2 { border-bottom: 2px solid var(--zand); display: table; padding-bottom: 4px; }
+
+/* nieuwsbrief-kop: compacter dan een uitlegartikel, want een nieuwsbericht
+   moet meteen bij de tekst zijn */
+.nieuws-kop { padding: 34px 0 26px; }
+.nieuws-kop h1 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); max-width: 18em; }
+.nieuws-kop .lead { font-size: 1.05rem; }
+
+/* foto naast de tekst i.p.v. een blok bovenaan */
+.nieuwsfoto {
+  float: right; width: 46%; max-width: 330px;
+  margin: 6px 0 18px 26px;
+}
+.nieuwsfoto img { width: 100%; height: auto; display: block; border-radius: var(--radius); border: 1px solid var(--lijn); }
+/* koppen en blokken niet om de foto heen laten kruipen */
+.article h2, .article h3, .callout, .table-scroll, .mediaplek, .wizard-promo { clear: both; }
+.article::after { content: ""; display: block; clear: both; }
+@media (max-width: 640px) {
+  .nieuwsfoto { float: none; width: 100%; max-width: none; margin: 0 0 18px; }
+}
 .article ul, .article ol { padding-left: 22px; }
 .article li { margin: 5px 0; }
 
